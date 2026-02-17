@@ -32,10 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
-        run: |
-          mkdir -p public
-          cat src/header.html src/index.body.html src/footer.html > public/index.html
-          cat src/header.html src/profile.body.html src/footer.html > public/profile.html
+        uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
