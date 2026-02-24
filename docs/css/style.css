@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+body {
+    background-color: #fff;
+    background-image: url(../images/doorImage.pdf);
+    background-size: cover;
+    background-position: center top;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+p {
+    font-size: 1em;
+    text-align: center;
+}
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
