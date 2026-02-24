@@ -5,9 +5,6 @@ html {
 }
 body {
     background-color: #fff;
-    background-image: url(../images/doorImage.pdf);
-    background-size: cover;
-    background-position: center top;
 }
 
 h1 {
@@ -21,6 +18,17 @@ h2 {
 p {
     font-size: 1em;
     text-align: center;
+}
+.home-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}  
+#home {
+    background-image: url(../images/doorImage.pdf);
+    background-size: cover;
+    background-position: center top;
 }
 .wrapper {
     max-width: 800px;
