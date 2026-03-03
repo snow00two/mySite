@@ -197,7 +197,7 @@ aside p {
     margin-top: 10%;
 }
 .menu-content .page-title {
-    text-align: center;
+    text-align: center bottom;
 }
 .menu-content p {
     font-size: 1.125rem;
@@ -217,7 +217,7 @@ aside p {
 }
 .big-box img {
     height: 94%;
-    width: 100%;
+    width: 33%;
     object-fit: cover;
 }
 
