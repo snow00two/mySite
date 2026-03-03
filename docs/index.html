@@ -2,21 +2,46 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Site</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="snow00two's Site">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
-<body>  <div id="heme">
-  <div class="home-content wrapper">
-  <h1>sonw00two のサイトへようこそ </h1>
-  <p>これは私のウェブサイトです.ここに私の作ったものを公開します．</p>
-  </div>
+<body><div id="menu" class="big-bg">
+      <header class="page-header wrapper">
+          <!-- <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェ ホーム"></a></h1> -->
+          <nav>
+              <ul class="main-nav">
+                  <li><a href="profile.html">profile</a></li>
+                  <!-- <li><a href="menu.html">Menu</a></li> -->
+                  <!-- <li><a href="contact.html">Contact</a></li> -->
+              </ul>
+          </nav>
+      </header>
+
+      <div class="menu-content wrapper">
+          <h2 class="page-title">sonw00two のサイトへようこそ</h2>
+          <p>
+              これは私のウェブサイトです.ここに私の作ったものを公開します．
+          </p>
+      </div><!-- /.menu-content -->
+  </div><!-- /#menu --><div id="home">
   </div>
 
   <h2>2D・3Dシュミュレータ</h2>
   <p>JavaScriptとp5.jsで作成した2D・3Dシュミュレータを紹介します．</p>
+   <div class="wrapper grid">
+            <div class="item big-box">
+              <a href="https://snow00two.github.io/fractalApp/">
+                <img src="images/fractalApp.jpg" alt="フラクタルアプリ">
+                <p>fractal generator application</p>
+              </a>
+            </div>
+        </div><!-- /.grid -->
   <ul>
-    <li><a href="https://snow00two.github.io/fractalApp/">フラクタル生成アプリ</a></li>
     <li><a href="https://snow00two.github.io/kaleidoscopeApp/">万華鏡アプリ</a></li>
     <li><a href="https://snow00two.github.io/compIsoApp/">鏡映から生まれる合同変換アプリ</a></li>
     <li><a href="https://snow00two.github.io/spaceInvApp/">宇宙からの侵攻</a></li>
