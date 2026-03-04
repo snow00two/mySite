@@ -231,7 +231,7 @@ aside p {
 }
 .big-box img {
     height: 94%;
-    width: 33%;
+    width: 100%;
     object-fit: cover;
 }
 
