@@ -21,7 +21,7 @@ g = (sqrt(5) +1 )*f /2 ; %g = f * \tau
 k = f + g;
 
 beginfig(1);
-z0= (5a , 6a);
+z0= (5a , 6a)+(16a,0);
 z1 = a*(sind(c), -cosd(c)*sind(d));
 z2 = a*(cosd(c), sind(c)*sind(d));
 z3 = a*(0, cosd(d)); 
@@ -109,7 +109,7 @@ pickup pencircle scaled 0.5pt;
 %	draw z[10+i]-- z[20+i]  dashed evenly;
 %endfor 
 
-z100= (5a , 6a)+(13a,0);
+z100= (5a , 6a)+(16a,0)-(16a,0);
 %z1 = a*(sind(c), -cosd(c)*sind(d));
 %z2 = a*(cosd(c), sind(c)*sind(d));
 %z3 = a*(0, cosd(d)); 
@@ -214,7 +214,7 @@ draw z175--z176 dashed evenly withcolor red ;
 
 pickup pencircle scaled 0.5pt;
 
-z200= (5a , 6a)+(26a,0);
+z200= (5a , 6a)+(32a,0);
 
 z211 = z200 + g* z1+ g* z2 +g* z3 ;
 z212 = z200 + g* z1- g* z2 +g* z3 ;
@@ -301,6 +301,8 @@ endfor
 for i = 1  step 2 until 7:
 	draw z[260 + i]--z[261 + i] dashed evenly withcolor red;
 endfor
+pickup pencircle scaled 0.5pt;
+
 
 endfig;
 
