@@ -190,7 +190,7 @@ aside p {
 ------------------------------- */
 #menu {
     background-image: url(../images/doorImage.jpg);
-    min-height: 100vh;
+    min-width: 100vh;
 }
 .menu-content {
     max-width: 560px;
