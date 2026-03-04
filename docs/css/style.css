@@ -57,6 +57,20 @@ img {
     background: #0090aa;
 }
 
+/* my settings */
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+p {
+    font-size: 1em;
+    text-align: center;
+}
+
 /* HEADER
 ------------------------------- */
 .page-header {
@@ -197,10 +211,10 @@ aside p {
     margin-top: 10%;
 }
 .menu-content .page-title {
-    text-align: center bottom;
+    text-align: center;
 }
 .menu-content p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin: 10px 0 0;
 }
 
