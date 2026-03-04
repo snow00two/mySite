@@ -70,6 +70,10 @@ p {
     font-size: 1em;
     text-align: center;
 }
+div {
+    margin: 5%;
+    padding: 5%;
+}
 
 /* HEADER
 ------------------------------- */
@@ -233,6 +237,7 @@ aside p {
     height: 94%;
     width: 100%;
     object-fit: cover;
+    background-clip: content-box;
 }
 
 /* フッター
