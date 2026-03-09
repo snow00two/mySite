@@ -70,10 +70,6 @@ dotlabel.top(btex $3$ etex,z52);
 dotlabel.bot(btex $2$ etex,z53);
 dotlabel.top(btex $4$ etex,z54);
 
-%for i = 3 upto 5:
-%	draw z[10i + 1]--z[10i + 2];
-%	draw z[10i + 3]--z[10i + 4];
-%endfor
 z60 = z0 + (( z51 + z11 + z31 + z32 + z12 )/5 - z0 ) ;
 z61 = z0 + (( z33 + z34 + z23 + z54 + z24 )/5 - z0 ) ;
 z62 = z0 +  1.7(( z51 + z11 + z31 + z32 + z12 )/5 - z0 ) ;
@@ -99,20 +95,8 @@ dotlabel(btex   etex,z60);
 dotlabel(btex   etex,z61);
 
 pickup pencircle scaled 0.5pt;
-%draw z11--z12--z13--z14-- cycle;
-%draw z21--z22--z23;
-%draw z23--z24--z21 dashed evenly;
-%for i = 1 upto 3:
-%	draw z[10+i]-- z[20+i];
-%endfor 
-%for i = 4 upto 4:
-%	draw z[10+i]-- z[20+i]  dashed evenly;
-%endfor 
 
 z100= (5a , 6a)+(16a,0)-(16a,0);
-%z1 = a*(sind(c), -cosd(c)*sind(d));
-%z2 = a*(cosd(c), sind(c)*sind(d));
-%z3 = a*(0, cosd(d)); 
 
 z111 = z100 + g* z1+ g* z2 +g* z3 ;
 z112 = z100 + g* z1- g* z2 +g* z3 ;
@@ -179,10 +163,6 @@ dotlabel(btex  etex,z164);
 dotlabel(btex  etex,z165);
 dotlabel(btex  etex,z166);
 
-%for i = 3 upto 5:
-%	draw z[10i + 1]--z[10i + 2];
-%	draw z[10i + 3]--z[10i + 4];
-%endfor
 draw z151--z111--z131--z132--z112-- cycle;
 draw z131--z121--z153--z122--z132;
 draw z111--z141--z142--z121;
@@ -269,10 +249,6 @@ dotlabel.top(btex $3$ etex,z252);
 dotlabel.bot(btex $2$ etex,z253);
 dotlabel.top(btex $4$ etex,z254);
 
-%for i = 3 upto 5:
-%	draw z[10i + 1]--z[10i + 2];
-%	draw z[10i + 3]--z[10i + 4];
-%endfor
 draw z251--z211--z231--z232--z212-- cycle;
 draw z231--z221--z253--z222--z232;
 draw z211--z241--z242--z221;
@@ -302,8 +278,81 @@ for i = 1  step 2 until 7:
 	draw z[260 + i]--z[261 + i] dashed evenly withcolor red;
 endfor
 pickup pencircle scaled 0.5pt;
+endfig;
 
+numeric a, r, d;
+a = 6pt;
+r = a;
+d = r*cosd(30);
 
+%My fabicon
+beginfig(2);
+   z0 = (2d,2r);%prime center
+   z20 = z0 + (3d,0);%next center 
+   for i = 1 upto 2:
+      for j= 1 upto 6:
+         z[6i +j] = z0 + i*r*(cosd(60j + 30), sind(60j + 30));
+      endfor
+   endfor
+   for i = 1 upto 2:
+      for j= 1 upto 6:
+         z[6i +j +20] = z20 + i*r*(cosd(60j + 30), sind(60j + 30));
+      endfor
+   endfor
+
+   path p;
+   p = for j =4 upto 6:
+            z[12 +j]--
+         endfor
+         z13;
+   path q;
+   q = for j = 5 upto 6:
+            z[20+ 12 +j]--
+         endfor
+         z[20+12 +1]--z[20+12 +2];
+   z50 = p intersectionpoint q;
+   path q;
+   q = for j = 3 upto 5:
+            z[20+ 12 +j]--
+         endfor
+         z[20+12 +6];
+   z51 = p intersectionpoint q;
+   
+   path p;
+   p = z50--
+      for j = 1 upto 4:
+         z[12 +j]--
+      endfor 
+      z51--
+      for j = 4 upto 6:
+         z[20 + 12 +j]--
+      endfor 
+      z[20 + 12+1]-- cycle;
+   fill p withcolor white;
+   
+   pickup pencircle scaled 2pt;
+   for i = 1 upto 1:
+      draw
+         for j =1 upto 6:
+            z[20+ 6i +j]--
+         endfor
+         cycle;
+   endfor   
+   for i = 2 upto 2:
+      draw
+         z51--
+         for j = 4 upto 6:
+            z[20+ 6i +j]--
+         endfor
+         z[20+6i+1]--z50;
+   endfor   
+   for i = 1 upto 2:
+      draw
+         for j =1 upto 6:
+            z[6i +j]--
+         endfor
+         cycle;
+   endfor   
 endfig;
 
 verbatimtex
