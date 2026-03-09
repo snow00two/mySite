@@ -281,11 +281,11 @@ pickup pencircle scaled 0.5pt;
 endfig;
 
 numeric a, r, d;
-a = 6pt;
+a = 5pt;
 r = a;
 d = r*cosd(30);
 
-%My fabicon
+%My Logo
 beginfig(2);
    z0 = (2d,2r);%prime center
    z20 = z0 + (3d,0);%next center 
@@ -317,6 +317,7 @@ beginfig(2);
          endfor
          z[20+12 +6];
    z51 = p intersectionpoint q;
+   z52 = 0.5[z[12 +5 +20] ,z[12 +6+20] ] + (a,0);
    
    path p;
    p = z50--
@@ -353,6 +354,8 @@ beginfig(2);
          endfor
          cycle;
    endfor   
+   
+   label.rt(btex {\Large \textbf{snow00two}} etex,z52);
 endfig;
 
 verbatimtex

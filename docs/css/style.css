@@ -75,7 +75,7 @@ div {
     margin: 5%;
     padding: 5%;
 }
- */
+
 /* HEADER
 ------------------------------- */
 .page-header {
@@ -83,7 +83,7 @@ div {
     justify-content: space-between;
 }
 .logo {
-    width: 210px;
+    width: 100px;
     margin-top: 14px;
 }
 .main-nav {
@@ -203,7 +203,7 @@ aside {
 }
 aside p {
     padding: 12px 10px;
-} */
+} 
 
 /* MENU
 ------------------------------- */
