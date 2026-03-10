@@ -70,11 +70,6 @@ p {
     font-size: 1em;
     text-align: center;
 }
-/* 
-div {
-    margin: 5%;
-    padding: 5%;
-}
 
 /* HEADER
 ------------------------------- */
@@ -104,12 +99,6 @@ div {
 }
 
 /* HOME
-------------------------------- */
-/* NEWS
-------------------------------- */
-/* 記事部分 */
-/* サイドバー */
-/* MENU
 ------------------------------- */
 #menu {
     background-image: url(../images/doorImage.jpg);
@@ -160,7 +149,7 @@ footer p {
 
 /* モバイル版
 ------------------------------- */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .page-title {
         font-size: 2.5rem;
     }
