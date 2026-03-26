@@ -10,8 +10,8 @@ verbatimtex
 etex;
 
 numeric a,b;
-a = 10pt;
-b = 6pt;
+a = 7pt;%a = 10pt;
+b = 4.2pt; %b = 6pt;
 numeric c, d;
 c = 190; %angle of rotation of figure around z axis
 d = -20; %angle of rotation of view point around y axis
@@ -281,7 +281,7 @@ pickup pencircle scaled 0.5pt;
 endfig;
 
 numeric a, r, d;
-a = 5pt;
+a = 10pt;%a = 5pt;
 r = a;
 d = r*cosd(30);
 
@@ -331,7 +331,7 @@ beginfig(2);
       z[20 + 12+1]-- cycle;
    fill p withcolor white;
    
-   pickup pencircle scaled 2pt;
+   pickup pencircle scaled 5pt;%2pt;
    for i = 1 upto 1:
       draw
          for j =1 upto 6:
