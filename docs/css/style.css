@@ -33,9 +33,9 @@ img {
 
 /* 見出し */
 .page-title {
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: 'Philosopher', serif;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     font-weight: normal;
 }
 .sub-title {
