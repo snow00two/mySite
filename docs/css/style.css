@@ -35,7 +35,7 @@ img {
 .page-title {
     font-size: 5rem;
     font-family: 'Philosopher', serif;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight: normal;
 }
 .sub-title {
@@ -101,7 +101,7 @@ p {
 /* HOME
 ------------------------------- */
 #menu {
-    background-image: url(../images/doorImage.jpg);
+    background-image: url(../images/bannerLarge.jpg);
     min-width: 100vh;
     margin-bottom: 3%;
 }
