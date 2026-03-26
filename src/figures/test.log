@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.5.23)  26 MAR 2026 11:42
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.5.23)  26 MAR 2026 12:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -433,8 +433,6 @@ Package hyperref Info: Link coloring ON on input line 27.
 
 File: dodecahfig.1 Graphic file (type eps)
 <dodecahfig.1>
-File: dodecahfig.2 Graphic file (type eps)
-<dodecahfig.2>
 
 
 [1] (./test.aux)
@@ -447,12 +445,12 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12051 strings out of 473836
- 180992 string characters out of 5731189
- 584596 words of memory out of 5000000
- 35007 multiletter control sequences out of 15000+600000
+ 12002 strings out of 473836
+ 179926 string characters out of 5731189
+ 583596 words of memory out of 5000000
+ 34958 multiletter control sequences out of 15000+600000
  565785 words of font info for 68 fonts, out of 8000000 for 9000
  1090 hyphenation exceptions out of 8191
  72i,5n,79p,593b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on test.dvi (1 page, 940 bytes).
+Output written on test.dvi (1 page, 824 bytes).
