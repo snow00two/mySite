@@ -1,0 +1,5 @@
+!#/bin/sh
+
+cd ~/Documents/GitHub/mySite
+cat src/header.html src/index.body.html src/header.html > docs/index.html
+cat src/header.html src/profile.body.html src/header.html > docs/profile.html
