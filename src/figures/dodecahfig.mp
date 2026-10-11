@@ -358,6 +358,384 @@ beginfig(2);
    label.rt(btex {\Large \textbf{snow00two}} etex,z52);
 endfig;
 
+
+numeric a, b, e;
+a= 7pt;
+b= 6pt;
+e = 2pt;
+
+numeric c, d;
+c = -15;%default 30%angle of rotation of figure around z axis
+d = 30;%default 30%angle of rotation of view point around y axis
+
+numeric f, g, k;
+f = 2.1 ;% scale factor
+g = (sqrt(5) +1 )*f /2 ; %g = f * \tau
+k = f + g;
+
+beginfig(3);
+z0=(2a,7a);%Origin : adjust the position of the whole figures.
+% In $\mathbf R^3$  we take an orthnormal frame
+% e_1=(cos(c)cos(d), sin(c), -cos(c)sin(d)), 
+% e_2=(-sin(c)cos(d), cos(c),sin(c)sin(d)), e_3=(sin(d), 0,cos(d)
+% and consider the orthogonal projection to yz-plane.
+z1 = a*(sind(c), -cosd(c)*sind(d));  %2026/10/11
+z2 = a*(cosd(c), sind(c)*sind(d));
+z3 = a*(0, cosd(d));
+
+%vertices  of cube 
+z11 = z0 + 8z3 ;
+z12 = z11 + 8z2;
+z13 = z12 + 8z1;
+z14 = z13 - 8z2 ;
+z15 = z0  ;
+z16 = z15+ 8z2;
+z17 = z16 + 8z1;
+z18 = z17 - 8z2 ;
+z19 = 0.5[z15,z13];
+
+%edges of cube
+draw z11--z12--z13--z14--  cycle;
+draw z16--z17--z18;
+draw z18--z15--z16 dashed evenly;
+for i=12 upto 14:
+	draw z[i]--z[i+4];
+endfor;
+for i=11 upto 11:
+	draw z[i]--z[i+4] dashed evenly;
+endfor;
+
+%vertices of outer cube
+z21 = z0 - z1- z2 - z3 + 10z3 ;
+z22 = z21 + 10z2;
+z23 = z22 + 10z1;
+z24 = z23 - 10z2 ;
+z25 = z0- z1- z2 - z3  ;
+z26 = z25+ 10z2;
+z27 = z26 + 10z1;
+z28 = z27 - 10z2 ;
+
+%center of faces of outer cube
+z31= 0.5[z21,z23];
+z32 = 0.5[z25,z27];
+z33= 0.5[z21,z26];
+z34= 0.5[z23,z28];
+z35= 0.5[z21,z28];
+z36= 0.5[z23,z26];
+
+%center of faces
+z41= 0.5[z11,z13];
+z42 = 0.5[z15,z17];
+z43= 0.5[z11,z16];
+z44= 0.5[z13,z18];
+z45= 0.5[z11,z18];
+z46= 0.5[z13,z16];
+
+%center of edges of cube
+z51= 0.5[z11,z12];
+z52= 0.5[z12,z13];
+z53= 0.5[z13,z14];
+z54= 0.5[z14,z11];
+
+z55 = 0.5[z11,z15];
+z56 = 0.5[z12,z16];
+z57 = 0.5[z13,z17];
+z58 = 0.5[z14,z18];
+
+z61= 0.5[z17,z18];
+z62= 0.5[z18,z15];
+z63= 0.5[z15,z16];
+z64= 0.5[z16,z17];
+
+draw z43--z44;
+draw z13--z15;
+draw z53--z63;
+
+draw z12--z15--z18 withcolor green;
+draw z14--z15--z16 withcolor blue;
+draw z61--z63--z51  withcolor red;
+
+z70 = z19 - (0,8a);
+z80 = z70 - (2a,0);
+z89 = 0.5[z80,z70];
+z90 = z70 + (2a,0);
+draw z80--z90;
+
+for i = 7, 8, 9:
+   for j= 1 upto 4:
+      z[10i+j]= z[10i] + e*(cosd(90(j-1)),sind(90(j-1)));
+   endfor
+endfor
+
+path p;
+p = for  j= 1 upto 4:
+         z[80+j]..
+      endfor
+      cycle;
+fill p withcolor red;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[70+j]..
+      endfor
+      cycle;
+fill p withcolor green;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[90+j]..
+      endfor
+      cycle;
+fill p withcolor blue;
+draw p;
+
+label.top(btex 4 etex,z89);
+
+pickup pencircle scaled 1pt;
+
+draw z51--z53--z61  withcolor red;
+draw z16--z13--z14 withcolor blue;
+draw z18--z13--z12 withcolor green;
+
+draw z53--z19--z44;
+draw z19--z13;
+
+pickup pencircle scaled 0.5pt;
+
+z100=z0 + (29a,0);%Origin : adjust the position of the whole figures.
+
+%vertices  of cube 
+z111 = z100 + 8z3 ;
+z112 = z111 + 8z2;
+z113 = z112 + 8z1;
+z114 = z113 - 8z2 ;
+z115 = z100  ;
+z116 = z115+ 8z2;
+z117 = z116 + 8z1;
+z118 = z117 - 8z2 ;
+z119 = 0.5[z115,z113];%center of cube
+
+%edges of cube
+draw z111--z112--z113--z114--  cycle;
+draw z116--z117--z118;
+draw z118--z115--z116 dashed evenly;
+for i=112 upto 114:
+	draw z[i]--z[i+4];
+endfor;
+for i=111 upto 111:
+	draw z[i]--z[i+4] dashed evenly;
+endfor;
+
+%vertices of outer cube
+z121 = z100 - z1- z2 - z3 + 10z3 ;
+z122 = z121 + 10z2;
+z123 = z122 + 10z1;
+z124 = z123 - 10z2 ;
+z125 = z100- z1- z2 - z3  ;
+z126 = z125+ 10z2;
+z127 = z126 + 10z1;
+z128 = z127 - 10z2 ;
+
+%center of faces of outer cube
+z131= 0.5[z121,z123];
+z132 = 0.5[z125,z127];
+z133= 0.5[z121,z126];
+z134= 0.5[z123,z128];
+z135= 0.5[z121,z128];
+z136= 0.5[z123,z126];
+
+%center of faces
+z141= 0.5[z111,z113];
+z142 = 0.5[z115,z117];
+z143= 0.5[z111,z116];
+z144= 0.5[z113,z118];
+z145= 0.5[z111,z118];
+z146= 0.5[z113,z116];
+%for i = 41, 44,  46:
+%	dotlabel("",z[i]);
+%endfor;
+
+%center of edges of cube
+z151= 0.5[z111,z112];
+z152= 0.5[z112,z113];
+z153= 0.5[z113,z114];
+z154= 0.5[z114,z111];
+
+z155 = 0.5[z111,z115];
+z156 = 0.5[z112,z116];
+z157 = 0.5[z113,z117];
+z158 = 0.5[z114,z118];
+
+z161= 0.5[z117,z118];
+z162= 0.5[z118,z115];
+z163= 0.5[z115,z116];
+z164= 0.5[z116,z117];
+
+%dotlabel(btex etex,z19);
+
+draw z143--z144;
+draw z113--z115;
+draw z114--z116;
+
+draw z111--z116 withcolor blue;
+draw z118--z115--z112 withcolor red;
+draw z114--z115--z116 withcolor green;
+
+z170 = z119 - (0,8a);
+z180 = z170 - (2a,0);
+z189 = 0.5[z180,z170];
+z190 = z170 + (2a,0);
+draw z180--z190;
+
+for i = 17, 18, 19:
+   for j= 1 upto 4:
+      z[10i+j]= z[10i] + e*(cosd(90(j-1)),sind(90(j-1)));
+   endfor
+endfor
+
+path p;
+p = for  j= 1 upto 4:
+         z[180+j]..
+      endfor
+      cycle;
+fill p withcolor red;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[170+j]..
+      endfor
+      cycle;
+fill p withcolor green;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[190+j]..
+      endfor
+      cycle;
+fill p withcolor blue;
+draw p;
+
+%label.top(btex 4 etex,z89);
+
+pickup pencircle scaled 1pt;
+draw z112--z113--z118 withcolor red;
+draw z116--z113--z114  withcolor green;
+draw z116--z117--z114--z111 withcolor blue;
+draw z119--z144;
+draw z119--z114;
+draw z119--z113;
+
+numeric c, d;
+c = 195;%193; %angle of rotation of figure around z axis
+d = -20; %angle of rotation of view point around y axis
+pickup pencircle scaled 0.5pt;
+z201 = a*(sind(c), -cosd(c)*sind(d));  
+z202 = a*(cosd(c), sind(c)*sind(d));
+z203 = a*(0, cosd(d));
+
+z200 = z0 + (17a,a);
+z211 = z200 + g* z201+ g* z202 +g* z203 ;
+z212 = z200 + g* z201- g* z202 +g* z203 ;
+z213 = z200 - g* z201- g* z202 +g* z203 ;
+z214 = z200 - g* z201 + g* z202 +g* z203 ;
+z221 = z200 + g* z201+ g* z202 -g* z203 ;
+z222 = z200 + g* z201- g* z202 -g* z203 ;
+z223 = z200 - g* z201- g* z202 -g* z203 ;
+z224 = z200 - g* z201 + g* z202 -g* z203 ;
+
+z231= z200 + k* z201+ f * z202 ;
+z232= z200 + k* z201 - f * z202;
+z233= z200 - k* z201+ f * z202 ;
+z234= z200 - k* z201 - f * z202;
+z241= z200 + k* z202+ f * z203 ;
+z242= z200 + k* z202 - f * z203;
+z243= z200 - k* z202+ f * z203 ;
+z244= z200 - k* z202 - f * z203;
+z251= z200 + k* z203+ f * z201 ;
+z252= z200 + k* z203 - f * z201;
+z253= z200 - k* z203+ f * z201 ;
+z254= z200 - k* z203 - f * z201;
+
+z260 = z200 + (( z251 + z211 + z231 + z232 + z212 )/5 - z200 ) ;
+z261 = z200 + (( z233 + z234 + z223 + z254 + z224 )/5 - z200 ) ;
+z262 = z200 +  1.7(( z251 + z211 + z231 + z232 + z212 )/5 - z200 ) ;
+z263 = z200 + 1.7(( z233 + z234 + z223 + z254 + z224 )/5 - z200 ) ;
+z270 = 0.5[z262,z263];
+z272 = 0.5[z232,z212]; 
+z271 = z200 + ((z251+z211+z231+z232+z212)/5-z200);%center of face
+z273 = 0.5[z251,z211]; 
+z274 = 0.5[z254,z223]; 
+z275 = 0.5[z213,z252];
+z276 = 0.5[z253,z221];
+z277 =  0.5[z233,z224];
+draw z251--z211--z231--z232--z212-- cycle;
+draw z231--z221--z253--z222--z232;
+draw z211--z241--z242--z221;
+draw z212--z243--z244--z222;
+draw z241--z214--z252;
+draw z252--z213--z243;
+draw z251--z252;
+draw z242--z224--z254 dashed evenly;
+draw z244--z223--z254 dashed evenly;
+draw z213--z234--z233--z214 dashed evenly;
+draw z224--z233 dashed evenly;
+draw z223--z234 dashed evenly;
+draw z253--z254 dashed evenly;
+
+draw z214--z233--z274--z222  withcolor green;
+draw z275--z233--z224--z276 withcolor blue;
+draw z241--z277--z223--z244 withcolor red; 
+draw z270--z277;
+draw z270--z233;
+draw z270--z261;
+
+z280 = z270 - (0,8a);
+z290 = z280 - (2a,0);
+z299 = 0.5[z290,z280];
+z300 = z280 + (2a,0);
+draw z290--z300;
+
+for i =  28, 29,30:
+   for j= 1 upto 4:
+      z[10i+j]= z[10i] + e*(cosd(90(j-1)),sind(90(j-1)));
+   endfor
+endfor
+
+path p;
+p = for  j= 1 upto 4:
+         z[290+j]..
+      endfor
+      cycle;
+fill p withcolor red;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[280+j]..
+      endfor
+      cycle;
+fill p withcolor green;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[300+j]..
+      endfor
+      cycle;
+fill p withcolor blue;
+draw p;
+
+label.top(btex 5 etex,z299);
+
+pickup pencircle scaled 1pt;
+
+draw z270--z272;%
+draw z270--z271;
+draw z270--z232;
+draw z222--z232--z271--z273--z214 withcolor green; %z13 z43  z52 z51
+draw z244--z272--z211--z241 withcolor red; 
+draw z276--z232--z212--z275 withcolor blue;
+endfig;
+
+
 verbatimtex
 \end{document}
 etex;
