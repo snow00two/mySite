@@ -735,6 +735,427 @@ draw z244--z272--z211--z241 withcolor red;
 draw z276--z232--z212--z275 withcolor blue;
 endfig;
 
+numeric a;%in figure.4 we change a
+a = 8pt;
+
+beginfig(4);
+z0 = (0,0);
+z1 = (3a/2,0);
+z2 = (0,3*sqrt(3)*a/2);
+
+z3 = z0+ (0,-a);%correct z0 
+
+for i = 1 upto 7:
+   for j = 0 upto 8:
+      z[10i +j] = z3+ j*z1+  (7 - i)*z2;
+   endfor
+endfor
+
+%test
+%for i= 1 upto 6:
+%   draw z[10i]-- z[10i +9];
+%endfor
+
+z80 = z10 + (a,-2a);
+z81 = z18 + (-a,-2a);
+z82 = z68 + (-a,2a);
+z83 = z60 + (a,2a);
+
+%test
+%draw z80--z81--z82;
+%draw z80--z83--z82;
+
+for i = 2 upto 5:
+   z[100 + i] = whatever[z80, z83] =whatever[z[10i],z[10i +8]];
+   z[110 + i] = whatever[z81, z82] =whatever[z[10i],z[10i +8]];
+endfor
+for i = 2, 3, 5:
+   draw z[100 + i]--z[110 + i];
+endfor
+
+
+for j = 0 step 2 until 7:
+	z[120 + j] = whatever[z80, z81] = whatever[z[10+j],z[20+j+1]];
+%	draw z[120 + j]--z[20+j+1];
+endfor
+for j = 1 step 2 until 8 :
+	z[130 + j] = whatever[z80, z81] = whatever[z[20+j],z[10+j+1]];
+%	draw z[130 + j]--z[20+j];
+endfor
+
+for j = 1 step 2 until 6:
+	z[140 + j] = whatever[z82, z83] = whatever[z[60+j],z[50+j+1]];
+%	draw z[140 + j]--z[50+j+1];
+endfor
+for j = 2 step 2 until 7:
+	z[150 + j] = whatever[z82, z83] = whatever[z[60+j+1],z[50+j]];
+%	draw z[150 + j]--z[50+j];
+endfor
+
+for i = 2, 4:
+   z[160 + i] = whatever[z80, z83] = whatever[z[10(i+1)],z[10i+1]];
+   z[170 + i] = whatever[z80, z83] = whatever[z[10(i-1)],z[10i+1]];
+endfor
+%draw z[160 + 4]--z[40+1]--z[170 + 4];
+%draw z[160 + 2]--z[20+1];
+
+for i = 2, 4:
+   z[180 + i] = whatever[z81, z82] = whatever[z[10(i+1)+8],z[10i+7]];
+   z[190 + i] = whatever[z81, z82] = whatever[z[10(i-1)+8],z[10i+7]];
+endfor
+%draw z[180 + 4]--z[40+7]--z[190 + 4];
+%draw z[180 + 2]--z[20+7];
+
+draw z131--z162;
+draw z133--z164;
+draw z137--z143;
+draw z194--z145;
+
+draw z174--z152;
+draw z120--z154;%%
+draw z124--z184;
+draw z126--z182;
+
+z200 = z54 + (0,-1.8a);
+z210 = z200 + (-a,-sqrt(3)*a);
+z219 = 0.5[z200,z210];
+z220 = z200 +  (a,-sqrt(3)*a);
+%draw z80--z90;
+
+for i = 20, 21, 22:
+   for j= 1 upto 6:
+      z[10i+j]= z[10i] + e*(cosd(60(j-1)),sind(60(j-1)));
+   endfor
+endfor
+
+draw z205--z212;
+draw z206--z223;
+draw z211--z224;
+
+path p;
+p = for  j= 1 upto 6:
+         z[200+j]..
+      endfor
+      cycle;
+fill p withcolor red;
+draw p;
+path p;
+p = for  j= 1 upto 6:
+         z[220+j]..
+      endfor
+      cycle;
+fill p withcolor blue;
+draw p;
+path p;
+p = for  j= 1 upto 6:
+         z[210+j]..
+      endfor
+      cycle;
+fill p withcolor green;
+draw p;
+
+pickup pencircle scaled 1pt;
+draw z[100 + 4]--z[110 + 4] withcolor red;
+draw z135--z141 withcolor blue;
+draw z122--z156 withcolor green;
+
+numeric a;
+a = 7.2pt;
+pickup pencircle scaled 0.5pt;
+
+z1000= z0 + (15a,0) + (-4a,a);
+z1001 = (3*sqrt(3)*a/2,0);
+z1002 = (0,3a/2);
+for i = 2 upto 14:
+   for j = 1 upto 7:
+      z[1000+ 10i +j] = z1000+ j*z1001+  (13 - i)*z1002;
+   endfor
+endfor
+
+z1160 = z1052 + (-a,a);
+z1161 = z1112 + (-a,-a);
+z1162 = z1116 + (a,-a);
+z1163 = z1056 + (a,a);
+
+%test
+%draw z160--z161--z162--z163-- cycle;
+
+for i = 5 upto 11:
+   z[1170 + i] = whatever[z1160, z1161] =whatever[z[1000+ 10i+1],z[1000+10i +7]];
+   z[1180 + i] = whatever[z1163, z1162] =whatever[z[1000+ 10i+1],z[1000+ 10i +7]];
+endfor
+for i = 5, 11:
+   draw z[1000+ 170 + i]--z[1000+ 180 + i];
+endfor
+
+for j= 2 upto 6:
+   z[1000+190 + j] = whatever[z1160, z1163] =whatever[z[1000+ 20+j],z[1000+ 140 +j]];
+   z[1000+ 200 + j] = whatever[z1161, z1162] =whatever[z[1000+ 20+j],z[1000+ 140 +j]];
+endfor
+for j= 2, 3, 5, 6:
+   draw z[1000+ 190+j]--z[1000+ 200 +j];
+endfor
+
+for j= 1 step 2 until 6:
+   z[1000+ 210 + j] = whatever[z1160, z1163] =whatever[z[1000+ 20+j],z[1000+ 50 +j +1]];
+%  draw z[1000+ 210 + j]--z[1000+ 50 +j +1];
+endfor
+for j= 3 step 2 until 6:
+   z[1000+ 220 + j] = whatever[z1160, z1163] =whatever[z[1000+ 40+j],z[1000+ 50 +j +1]];
+%   draw z[220 + j]--z[50 +j +1];
+endfor
+for j= 2 step 2 until 6:
+   z[1000+ 230 + j] = whatever[z1160, z1163] =whatever[z[1000+ 20+j+1],z[1000+ 50 +j]];
+ %  draw z[1000+ 230 + j]--z[1000+ 50 +j];
+endfor
+for j= 2 step 2 until 4:
+   z[1000+ 240 + j] = whatever[z1160, z1163] =whatever[z[1000+ 40+j+1],z[1000+ 50 +j]];
+%   draw z[1000+ 240 + j]--z[1000+ 50 +j];
+endfor
+
+for j= 1 step 2 until 6:
+   z[1000+ 250 + j] = whatever[z1161, z1162] =whatever[z[1000+ 140+j],z[1000+ 110 +j+1]];
+%  draw z[1000+ 250 + j]--z[1000+ 110 +j +1];
+endfor
+for j= 3 step 2 until 6:
+   z[1000+ 260 + j] = whatever[z1161, z1162] =whatever[z[1000+ 120+j],z[1000+ 110 +j +1]];
+%   draw z[1000+ 260 + j]--z[1000+ 110 +j +1];
+endfor
+for j= 2 step 2 until 6:
+   z[1000+ 270 + j] = whatever[z1161, z1162] =whatever[z[1140+j+1],z[1110 +j]];
+%   draw z[270 + j]--z[110 +j];
+endfor
+for j= 2 step 2 until 4:
+   z[1000+ 280 + j] = whatever[z1161, z1162] =whatever[z[1000+ 120+j+1],z[1000+ 110 +j]];
+%   draw z[280 + j]--z[110 +j];
+endfor
+
+for i = 5 step 2 until 11:
+   z[1000+ 290 + i] = whatever[z1160, z1161] =whatever[z[1000+ 10(i-1)+1],z[1000+ 10i+2]];
+   z[1000+ 300 + i] = whatever[z1160, z1161] =whatever[z[1000+ 10(i+1)+1],z[1000+ 10i+2]];
+%  draw z[1000+ 290 + i]--z[1000+ 10i+2];
+%  draw z[1000+ 300 + i]--z[1000+ 10i+2];
+endfor
+for i = 5 step 4 until 8:
+   z[1000+ 310 + i] = whatever[ z1160, z1161] =whatever[z[1000+ 10(i+3)+1],z[1000+ 10i+2]];
+%   draw z[310 + i]--z[10i+2];
+endfor
+for i = 11 step 4 until 11:
+   z[1000+ 320 + i] = whatever[z1160, z1161] =whatever[z[1000+ 10(i-3)+1],z[1000+ 10i+2]];
+%   draw z[1000+ 320 + i]--z[1000+ 10i+2];
+endfor
+
+for i = 5 step 2 until 11:
+   z[1000+ 330 + i] = whatever[z1162, z1163] =whatever[z[1000+ 10(i-1)+7],z[1000+ 10i+6]];
+   z[1000+ 340 + i] = whatever[z1162, z1163] =whatever[z[1000+ 10(i+1)+7],z[1000+ 10i+6]];
+%  draw z[1000+ 330 + i]--z[1000+ 10i+6];
+%  draw z[1000+ 340 + i]--z[1000+ 10i+6];
+endfor
+for i = 5 step 4 until 8:
+   z[1000+ 350 + i] = whatever[z1162, z1163] =whatever[z[1000+ 10(i+3)+7],z[1000+ 10i+6]];
+%   draw z[1000+ 350 + i]--z[1000+ 10i+6];
+endfor
+for i = 11 step 4 until 11:
+   z[1000+ 360 + i] = whatever[z1162, z1163] =whatever[z[1000+ 10(i-3)+7],z[1000+ 10i+6]];
+%   draw z[1000+ 360 + i]--z[1000+ 10i+6];
+endfor
+
+draw z1232--z1315;
+draw z1234--z1251;
+draw z1236--z1253;
+draw z1371--z1255;
+
+draw z1215--z1355;
+draw z1213--z1276;
+draw z1211--z1274;
+draw z1331--z1272;
+
+draw z1305--z1242;
+draw z1307--z1244;
+draw z1309--z1335;
+draw z1311--z1337;
+draw z1263--z1339;
+draw z1265--z1341;
+
+draw z1225--z1345;
+draw z1223--z1347;
+draw z1297--z1351;
+draw z1299--z1284;
+draw z1301--z1282;
+
+z1400= z1134;
+z1410= z1400 - (2a,0);
+z1420 =z1400 + (2a,0);
+for i =  40, 41, 42:
+   for j= 1 upto 4:
+      z[1000+10i+j]= z[1000+10i] + e*(cosd(90(j-1)),sind(90(j-1)));
+   endfor
+endfor
+
+z1419 = 0.5[z1400,z1410];
+z1429 = 0.5[z1400,z1420];
+
+path p;
+p = for  j= 1 upto 4:
+         z[1000+410+j]..
+      endfor
+      cycle;
+fill p withcolor red;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[1000+400+j]..
+      endfor
+      cycle;
+fill p withcolor green;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[1000+420+j]..
+      endfor
+      cycle;
+fill p withcolor blue;
+draw p;
+
+draw z1411--z1403;
+draw z1423--z1401;
+label.top(btex 6 etex,z1419);
+
+pickup pencircle scaled 1pt;
+draw z[1000+170 + 8]--z[1000+180 + 8] withcolor red;
+draw z1295--z1349 withcolor green;
+draw z[1000+190+4]--z[1000+200 +4] withcolor blue;
+
+
+pickup pencircle scaled 0.5pt;
+
+z2000 = z1000 +(17.7a,0)+(0,-3a);
+z2001 = (3a,0);
+z2002 = (0,3a);
+for i = 1 upto 6:
+   for j = 0 upto 5:
+      z[2000 + 10i +j] = z2000+ j*z2001+  (7 - i)*z2002;
+   endfor
+endfor
+
+z2080 = z2010 + (2a,-2a);
+z2081 = z2015 + (-2a,-2a);
+z2082 = z2065 + (-2a,2a);
+z2083 = z2060 + (2a,2a);
+
+%test
+%draw z2080--z2081--z2082;
+%draw z2080--z2083--z2082;
+for i = 2 upto 5:
+   z[2000+ 100 + i] = whatever[z2080, z2083] =whatever[z[2000+ 10i],z[2000+ 10i +5]];
+   z[2000+ 110 + i] = whatever[z2081, z2082] =whatever[z[2000+ 10i],z[2000+ 10i +5]];
+endfor
+for i = 2, 3, 5:
+   draw z[2000+ 100 + i]--z[2000+ 110 + i];
+endfor
+for j = 1 upto 4:
+   z[2000+ 120 + j] = whatever[z2080, z2081] =whatever[z[2000+ 10 + j ],z[2000+ 60 + j]];
+   z[2000+ 130 + j] = whatever[z2082, z2083] =whatever[z[2000+ 10 + j],z[2000+ 60+ j]];
+endfor
+for  j = 1 upto 4:
+   draw z[2000+ 120 + j]--z[2000+ 130 + j];
+endfor
+
+for j = 0 upto 3:
+	z[2000+ 140 + j] = whatever[z2080, z2081] = whatever[z[2000+ 10+j],z[2000+ 20+j+1]];
+%	draw z[2000+ 140 + j]--z[2000+ 20+j+1];
+endfor
+for j = 1 upto 4 :
+	z[2000+ 150 + j] = whatever[z2080, z2081] = whatever[z[2000+ 20+j],z[2000+ 10+j+1]];
+%	draw z[2000+ 150 + j]--z[2000+ 20+j];
+endfor
+for j = 0 upto 3:
+	z[2000+ 160 + j] = whatever[z2082, z2083] = whatever[z[2000+ 60+j],z[2000+ 50+j+1]];
+%	draw z[2000+ 160 + j]--z[2000+ 50+j+1];
+endfor
+for j = 1 upto 4 :
+	z[2000+ 170 + j] = whatever[z2082, z2083] = whatever[z[2000+ 50+j],z[2000+ 60+j+1]];
+%	draw z[170 + j]--z[50+j];
+endfor
+for i = 0 upto 4:
+	z[2000+ 180 + i] = whatever[z2080, z2083] = whatever[z[2000+ 10i],z[2000+ 10(i+1)+1]];
+%	draw z[2000+ 180 + i]--z[2000+ 10(i+1)+1];
+endfor
+for i = 2 upto 5:
+	z[2000+ 190 + i] = whatever[z2080, z2083] = whatever[z[2000+ 10(i+1)],z[2000+ 10i+1]];
+%	draw z[2000+ 190 + i]--z[2000+ 10i+1];
+endfor
+for i = 1 upto 4:
+	z[2000+ 200 + i] = whatever[z2081, z2082] = whatever[z[2000+ 10i+5],z[2000+ 10(i+1)+4]];
+%	draw z[200 + i]--z[10(i+1)+4];
+endfor
+for i = 2 upto 5:
+	z[2000+ 210 + i] = whatever[z2081, z2082] = whatever[z[2000+ 10(i+1)+5],z[2000+ 10i+4]];
+%	draw z[2000+ 210 + i]--z[2000+ 10i+4];
+endfor
+
+draw z2151--z2192;
+draw z2152--z2193;
+draw z2153--z2194;
+draw z2154--z2195;
+draw z2161--z2202;
+draw z2162--z2203;
+draw z2163--z2204;
+
+draw z2143--z2212;
+draw z2142--z2213;
+draw z2141--z2214;
+draw z2140--z2215;
+draw z2173--z2182;
+draw z2172--z2183;
+draw z2171--z2184;
+
+z2220= 0.5[z2062,z2063];
+z2230= z2220 - (2a,0);
+z2240 =z2220 + (2a,0);
+for i =  22, 23, 24:
+   for j= 1 upto 4:
+      z[2000+10i+j]= z[2000+10i] + e*(cosd(90(j-1)),sind(90(j-1)));
+   endfor
+endfor
+
+z2239 = 0.5[z2220,z2230];
+z2249 = 0.5[z2220,z2240];
+
+path p;
+p = for  j= 1 upto 4:
+         z[2000+230+j]..
+      endfor
+      cycle;
+fill p withcolor red;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[2000+220+j]..
+      endfor
+      cycle;
+fill p withcolor green;
+draw p;
+path p;
+p = for  j= 1 upto 4:
+         z[2000+240+j]..
+      endfor
+      cycle;
+fill p withcolor blue;
+draw p;
+
+draw z2231--z2223;
+draw z2243--z2221;
+label.top(btex 4 etex,z2239);
+label.top(btex 4 etex,z2249);
+
+pickup pencircle scaled 1pt;
+draw z2154--z2195 withcolor red;
+draw z[2000+100 + 4]--z[2000+110 + 4] withcolor green;
+draw z2140--z2215 withcolor blue;
+endfig;
+
+
 
 verbatimtex
 \end{document}
