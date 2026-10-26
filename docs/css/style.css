@@ -107,8 +107,8 @@ p {
 } */
 #home {
     background-image: url(../images/bannerLarge.jpg);
-    /* min-width: 100vh; */
-    height: 500px;
+    min-width: 100vh;
+    height: 400px;
     margin-bottom: 5%;
 }
 .menu-content {
@@ -144,11 +144,9 @@ p {
 /* profile */
 #profile {
     background-image: url(../images/simpleRoots.jpg);
-    /* min-width: 100vh;
-    margin-bottom: 3%; */
-    height: 500px;
+    /* min-width: 100vh; */
+    height: 400px;
     margin-bottom: 5%;
-
 }
 
 /* フッター
