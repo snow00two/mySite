@@ -107,17 +107,17 @@ p {
 } */
 #home {
     background-image: url(../images/bannerLarge.jpg);
-    min-width: 100vh;
+    height: 270vh;
     margin-bottom: 3%;
 }
 .menu-content {
     max-width: 560px;
     margin-top: 10%;
 }
-.menu-content .page-title {
+.home-content .page-title {
     text-align: center;
 }
-.menu-content p {
+.home-content p {
     font-size: 1rem;
     margin: 10px 0 0;
 }
@@ -142,8 +142,8 @@ p {
 
 /* profile */
 #profile {
-    background-image: url(../images/simpleRootsA.jpg);
-    min-width: 100vh;
+    background-image: url(../images/simpleRoots.jpg);
+    height: 270vh;
     margin-bottom: 3%;
 
 }
