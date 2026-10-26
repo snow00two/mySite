@@ -107,7 +107,8 @@ p {
 } */
 #home {
     background-image: url(../images/bannerLarge.jpg);
-    min-width: 100vh;
+    /* min-width: 100vh; */
+    height: 200vh;
     margin-bottom: 3%;
 }
 .menu-content {
