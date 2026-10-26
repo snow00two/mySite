@@ -100,7 +100,12 @@ p {
 
 /* HOME
 ------------------------------- */
-#menu {
+/* #menu {
+    background-image: url(../images/bannerLarge.jpg);
+    min-width: 100vh;
+    margin-bottom: 3%;
+} */
+#home {
     background-image: url(../images/bannerLarge.jpg);
     min-width: 100vh;
     margin-bottom: 3%;
@@ -133,6 +138,14 @@ p {
     width: 100%;
     object-fit: cover;
     background-clip: content-box;
+}
+
+/* profile */
+#profile {
+    background-image: url(../images/simpleRootsA.jpg);
+    min-width: 100vh;
+    margin-bottom: 3%;
+
 }
 
 /* フッター
