@@ -107,7 +107,7 @@ p {
 } */
 #home {
     background-image: url(../images/bannerLarge.jpg);
-    height: 270vh;
+    min-width: 100vh;
     margin-bottom: 3%;
 }
 .menu-content {
@@ -143,7 +143,7 @@ p {
 /* profile */
 #profile {
     background-image: url(../images/simpleRoots.jpg);
-    height: 270vh;
+    min-width: 100vh;
     margin-bottom: 3%;
 
 }
