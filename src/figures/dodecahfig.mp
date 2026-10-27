@@ -360,7 +360,7 @@ endfig;
 
 
 numeric a, b, e;
-a= 7pt;
+a= 6pt;
 b= 6pt;
 e = 2pt;
 
