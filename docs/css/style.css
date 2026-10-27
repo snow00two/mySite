@@ -141,8 +141,8 @@ p {
 /* profile */
 #profile {
     background-image: url(../images/simpleRoots.jpg);
-    /* min-width: 100vh; */
-    height: 550px;
+    min-width: 100vh;
+    height: 500px;
     margin-bottom: 3%;
 }
 .profile-content {
