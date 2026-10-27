@@ -113,14 +113,14 @@ p {
     /* width: 900px; */
     margin-bottom: 5%;
 }
-.menu-content {
+.menu-content .page-title {
     max-width: 560px;
     margin-top: 10%;
 }
 .menu-content .page-title {
     text-align: center;
 }
-.menu-content p {
+.menu-content .page-title p {
     font-size: 1rem;
     margin: 10px 0 0;
 }
