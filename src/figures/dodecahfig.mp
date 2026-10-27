@@ -360,7 +360,7 @@ endfig;
 
 
 numeric a, b, e;
-a= 6pt;
+a= 7pt;
 b= 6pt;
 e = 2pt;
 
@@ -502,7 +502,7 @@ draw z19--z13;
 
 pickup pencircle scaled 0.5pt;
 
-z100=z0 + (29a+6a,0);%Origin : adjust the position of the whole figures.
+z100=z0 + (29a,0);%Origin : adjust the position of the whole figures.
 
 %vertices  of cube 
 z111 = z100 + 8z3 ;
@@ -633,7 +633,7 @@ z201 = a*(sind(c), -cosd(c)*sind(d));
 z202 = a*(cosd(c), sind(c)*sind(d));
 z203 = a*(0, cosd(d));
 
-z200 = z0 + (17a+3.5a,a);
+z200 = z0 + (17a,a);
 z211 = z200 + g* z201+ g* z202 +g* z203 ;
 z212 = z200 + g* z201- g* z202 +g* z203 ;
 z213 = z200 - g* z201- g* z202 +g* z203 ;
