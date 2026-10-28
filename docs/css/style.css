@@ -194,13 +194,12 @@ footer p {
     }
 
     /* HOME */
-    #home {
+    /* #home {
         background-image: url(../images/bannerLarge.jpg);
         min-width: 100vh;
         height: 300px;
-        /* width: 900px; */
         margin-bottom: 3%;
-    } /*2026/10/28*/
+    } 2026/10/28 */
     .home-content {
         margin-top: 20%;
     }
