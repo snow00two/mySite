@@ -104,7 +104,7 @@ p {
 #home {
     background-image: url(../images/bannerLarge.jpg);
     min-width: 100vh;
-    height: 550px;
+    /* height: 550px; */
     /* width: 900px; */
     margin-bottom: 3%;
 }
@@ -142,7 +142,7 @@ p {
 #profile {
     background-image: url(../images/simpleRoots.jpg);
     /* min-width: 100vh; */
-    height: 500px;/*2026/10/28*/
+    /* height: 500px;2026/10/28 */
     margin-bottom: 3%;
 }
 .profile-content {
