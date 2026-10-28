@@ -103,7 +103,7 @@ p {
 ------------------------------- */
 #home {
     background-image: url(../images/bannerLarge.jpg);
-    min-width: 100vh;
+    /* min-width: 100vh; */
     /* height: 550px; */
     /* width: 900px; */
     margin-bottom: 3%;
