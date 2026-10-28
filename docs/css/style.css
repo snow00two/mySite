@@ -142,11 +142,11 @@ p {
 #profile {
     background-image: url(../images/simpleRoots.jpg);
     /* min-width: 100vh; */
-    height: 550px;
+    height: 500px;/*2026/10/28*/
     margin-bottom: 3%;
 }
 .profile-content {
-    max-width: 400px; /*2026/10/28*/
+    max-width: 550px; 
     margin-top: 10%;
 }
 .profile-content .page-title {
@@ -194,9 +194,14 @@ footer p {
     }
 
     /* HOME */
-    /* home */
+    #home {
+        background-image: url(../images/bannerLarge.jpg);
+        min-width: 100vh;
+        height: 300px;
+        /* width: 900px; */
+        margin-bottom: 3%;
+    } /*2026/10/28*/
     .home-content {
-        max-width: 400px; /* 2026/10/28 */
         margin-top: 20%;
     }
     .big-box {
