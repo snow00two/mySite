@@ -146,7 +146,7 @@ p {
     margin-bottom: 3%;
 }
 .profile-content {
-    max-width: 560px;
+    max-width: 400px; /*2026/10/28*/
     margin-top: 10%;
 }
 .profile-content .page-title {
@@ -196,6 +196,7 @@ footer p {
     /* HOME */
     /* home */
     .home-content {
+        max-width: 400px; /* 2026/10/28 */
         margin-top: 20%;
     }
     .big-box {
