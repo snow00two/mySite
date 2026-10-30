@@ -189,7 +189,7 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-    background: rgba(255,255,255,.5);
+    background: rgba(200,200,200,.5);
     border: 1px #fff solid;
     border-radius: 5px;
     padding: 10px;
