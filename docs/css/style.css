@@ -164,6 +164,7 @@ p {
 .contact-content {
     max-width: 550px; 
     margin-top: 10%;
+    /* background-position: center; */
 }
 .contact-content .page-title {
     text-align: center;
