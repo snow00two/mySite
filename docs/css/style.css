@@ -173,8 +173,8 @@ p {
     margin: 10px 0 0;
 }
 .contact-text {
-    background-position: center;
-    /* max-width: 70%; */
+    /* background-position: center; */
+    max-width: 80%;
     margin-left: 20%; 
     margin-bottom: 5%;
 }
